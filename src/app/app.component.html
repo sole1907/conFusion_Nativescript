@@ -4,7 +4,7 @@
       <Image
         row="0"
         col="0"
-        src="~/images/logo.png"
+        src="~/app/images/logo.png"
         class="sidedrawer-header-image"
       ></Image>
       <Label
@@ -33,6 +33,30 @@
           (tap)="onNavItemTap('/menu')"
         >
           <Label col="1" text="Menu" class="sidedrawer-list-item-text"></Label>
+        </GridLayout>
+        <GridLayout
+          columns="auto"
+          class="sidedrawer-list-item"
+          [class.selected]="isComponentSelected('/about')"
+          (tap)="onNavItemTap('/about')"
+        >
+          <Label
+            col="1"
+            text="About Us"
+            class="sidedrawer-list-item-text"
+          ></Label>
+        </GridLayout>
+        <GridLayout
+          columns="auto"
+          class="sidedrawer-list-item"
+          [class.selected]="isComponentSelected('/contact')"
+          (tap)="onNavItemTap('/contact')"
+        >
+          <Label
+            col="1"
+            text="Contact Us"
+            class="sidedrawer-list-item-text"
+          ></Label>
         </GridLayout>
       </StackLayout>
     </ScrollView>

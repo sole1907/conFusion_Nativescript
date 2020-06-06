@@ -18,6 +18,8 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { HomeComponent } from "./home/home.component";
+import { ContactComponent } from "./contact/contact.component";
+import { AboutComponent } from "./about/about.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -33,6 +35,8 @@ import { HomeComponent } from "./home/home.component";
         MenuComponent,
         DishdetailComponent,
         HomeComponent,
+        ContactComponent,
+        AboutComponent,
     ],
     providers: [
         { provide: "baseURL", useValue: baseURL },
