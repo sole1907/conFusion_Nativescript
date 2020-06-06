@@ -35,7 +35,7 @@ export class FavoriteService {
             );
     }
 
-    deleteFavorite(id: string): Observable<Dish[]> {
+    deleteFavorite(id: number): Observable<Dish[]> {
         let index = this.favorites.indexOf(id);
         if (index >= 0) {
             this.favorites.splice(index, 1);
