@@ -20,6 +20,8 @@ import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { HomeComponent } from "./home/home.component";
 import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
+import { TNSFontIconModule } from "nativescript-ngx-fonticon";
+import { FavoriteService } from "./services/favorite.service";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -29,6 +31,9 @@ import { AboutComponent } from "./about/about.component";
         NativeScriptHttpClientModule,
         HttpClientModule,
         NativeScriptUISideDrawerModule,
+        TNSFontIconModule.forRoot({
+            fa: require("~/fonts/font-awesome.min.css"),
+        }),
     ],
     declarations: [
         AppComponent,
@@ -42,6 +47,7 @@ import { AboutComponent } from "./about/about.component";
         { provide: "baseURL", useValue: baseURL },
         DishService,
         ProcessHTTPMsgService,
+        FavoriteService,
     ],
     schemas: [NO_ERRORS_SCHEMA],
 })

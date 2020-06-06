@@ -12,7 +12,7 @@ export class ProcessHTTPMsgService {
     public handleError(error: HttpErrorResponse | any) {
         let errMsg: string;
 
-        if (error.error instanceof ErrorEvent) {
+        if (error.error instanceof HttpErrorResponse) {
             errMsg = error.error.message;
         } else {
             errMsg = `${error.status} - ${error.statusText || ""} ${

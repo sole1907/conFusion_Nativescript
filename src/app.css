@@ -67,3 +67,7 @@ Button.-primary {
   background-color: #b39ddb;
   color: blue;
 }
+
+.fa {
+  font-family: FontAwesome, fontawesome-webfont;
+}
