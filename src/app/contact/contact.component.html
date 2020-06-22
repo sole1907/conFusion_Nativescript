@@ -1,4 +1,12 @@
-<ActionBar title="Contact Us" class="action-bar"> </ActionBar>
+<ActionBar title="Contact Us" class="action-bar">
+  <ActionItem
+    ios.systemIcon="9"
+    ios.position="right"
+    android.systemIcon="ic_menu_more"
+    android.position="actionBar"
+    (tap)="displayActionDialog()"
+  ></ActionItem>
+</ActionBar>
 <StackLayout class="page">
   <GridLayout class="m-5" rows="auto">
     <StackLayout row="0" class="p-10 border">

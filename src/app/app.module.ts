@@ -22,6 +22,14 @@ import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
 import { TNSFontIconModule } from "nativescript-ngx-fonticon";
 import { FavoriteService } from "./services/favorite.service";
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+import { FavoritesComponent } from "./favorites/favorites.component";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+import { ReservationComponent } from "./reservation/reservation.component";
+import { ReservationModalComponent } from "./reservationmodal/reservationmodal.component";
+import { ActionDialogService } from "./services/action-dialog.service";
+import { CommentComponent } from "./comment/comment.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -34,6 +42,9 @@ import { FavoriteService } from "./services/favorite.service";
         TNSFontIconModule.forRoot({
             fa: require("~/fonts/font-awesome.min.css"),
         }),
+        NativeScriptUIListViewModule,
+        NativeScriptFormsModule,
+        ReactiveFormsModule,
     ],
     declarations: [
         AppComponent,
@@ -42,12 +53,18 @@ import { FavoriteService } from "./services/favorite.service";
         HomeComponent,
         ContactComponent,
         AboutComponent,
+        FavoritesComponent,
+        ReservationComponent,
+        ReservationModalComponent,
+        CommentComponent,
     ],
+    entryComponents: [ReservationModalComponent, CommentComponent],
     providers: [
         { provide: "baseURL", useValue: baseURL },
         DishService,
         ProcessHTTPMsgService,
         FavoriteService,
+        ActionDialogService,
     ],
     schemas: [NO_ERRORS_SCHEMA],
 })

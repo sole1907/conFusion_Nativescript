@@ -1,4 +1,12 @@
-<ActionBar title="About Us" class="action-bar"> </ActionBar>
+<ActionBar title="About Us" class="action-bar">
+  <ActionItem
+    ios.systemIcon="9"
+    ios.position="right"
+    android.systemIcon="ic_menu_more"
+    android.position="actionBar"
+    (tap)="displayActionDialog()"
+  ></ActionItem>
+</ActionBar>
 <StackLayout class="page">
   <GridLayout class="m-5" rows="auto, *">
     <StackLayout row="0" class="p-10 border">
@@ -15,7 +23,11 @@
       ></Label>
     </StackLayout>
     <StackLayout row="1" class="p-10">
-      <Label class="h2 p-t-12 p-b-24" text="Corporate Leadership" fontWeight="Bold"></Label>
+      <Label
+        class="h2 p-t-12 p-b-24"
+        text="Corporate Leadership"
+        fontWeight="Bold"
+      ></Label>
       <GridLayout class="m-t-8" rows="*" columns="*" *ngIf="leaders">
         <ListView [items]="leaders" class="list-group">
           <ng-template let-leader="item">
@@ -29,7 +41,11 @@
                 [src]="baseURL + leader.image"
                 class="img-circle p-8"
               ></Image>
-              <GridLayout class="list-group-item p-l-10" rows="auto * *" columns="*">
+              <GridLayout
+                class="list-group-item p-l-10"
+                rows="auto * *"
+                columns="*"
+              >
                 <Label
                   row="0"
                   col="0"

@@ -1,0 +1,20 @@
+<GridLayout class="modal-view-style" rows="auto, auto">
+  <StackLayout [visibility]="!isDateTime ? 'visible' : 'collapsed'" row="0">
+    <ListPicker
+      #guestPicker
+      [items]="guestArray"
+      selectedIndex="0"
+    ></ListPicker>
+  </StackLayout>
+  <StackLayout [visibility]="isDateTime ? 'visible' : 'collapsed'" row="0">
+    <DatePicker #datePicker></DatePicker>
+    <TimePicker #timePicker></TimePicker>
+  </StackLayout>
+  <StackLayout row="1">
+    <Button
+      class="btn btn-primary btn-active"
+      text="submit"
+      (tap)="submit()"
+    ></Button>
+  </StackLayout>
+</GridLayout>
