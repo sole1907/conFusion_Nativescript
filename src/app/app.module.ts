@@ -31,6 +31,7 @@ import { ReservationModalComponent } from "./reservationmodal/reservationmodal.c
 import { ActionDialogService } from "./services/action-dialog.service";
 import { CommentComponent } from "./comment/comment.component";
 import { CouchbaseService } from "./services/couchbase.service";
+import { ReservationService } from "./services/reservation.service";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -67,6 +68,7 @@ import { CouchbaseService } from "./services/couchbase.service";
         FavoriteService,
         ActionDialogService,
         CouchbaseService,
+        ReservationService,
     ],
     schemas: [NO_ERRORS_SCHEMA],
 })
