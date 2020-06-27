@@ -12,9 +12,18 @@
   ></ActionItem>
 </ActionBar>
 <ScrollView orientation="vertical">
-  <GridLayout class="m-5" rows="auto auto auto" *ngIf="dish">
-    <StackLayout row="0" class="p-10 border">
-      <Image [src]="baseURL + dish.image"></Image>
+  <GridLayout
+    class="m-5"
+    rows="auto auto auto"
+    *ngIf="dish"
+    (swipe)="onSwipe($event)"
+  >
+    <StackLayout id="cardLayout" row="0" class="p-10 border">
+      <Image
+        id="cardImage"
+        [src]="baseURL + dish.image"
+        [visibility]="!showComments ? 'visible' : 'collapsed'"
+      ></Image>
       <StackLayout>
         <Label class="h2" [text]="dish.name"></Label>
         <Label class="body" [text]="dish.description" textWrap="true"></Label>
@@ -36,6 +45,7 @@
           col="1"
           [text]="numcomments + ' comments'"
           class="btn btn-rounded-sm btn-outline no-border"
+          (tap)="showAndHideComments()"
         ></Button>
         <Button
           row="0"
@@ -48,10 +58,12 @@
     </StackLayout>
     <Label row="1" height="40" class="p-10 m-t-10 h3" text="Comments"></Label>
     <ListView
+      id="commentList"
       row="2"
-      height="500"
+      height="300"
       [items]="dish.comments"
       class="list-group p-10"
+      [visibility]="showComments ? 'visible' : 'collapsed'"
     >
       <ng-template let-comment="item">
         <StackLayout class="list-group-item">

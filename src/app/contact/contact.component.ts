@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { BaseComponent } from "../shared/base.component";
 import { ActionDialogService } from "../services/action-dialog.service";
+import * as app from "tns-core-modules/application";
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 
 @Component({
     selector: "app-contact",
@@ -14,4 +16,9 @@ export class ContactComponent extends BaseComponent implements OnInit {
     }
 
     ngOnInit() {}
+
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.showDrawer();
+    }
 }
