@@ -115,7 +115,8 @@
         <GridLayout
           columns="50, *"
           class="sidedrawer-list-item"
-          (tap)="displayLoginDialog()"
+          [class.selected]="isComponentSelected('/auth')"
+          (tap)="onNavItemTap('/auth')"
         >
           <Label
             col="0"

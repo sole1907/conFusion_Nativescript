@@ -29,7 +29,7 @@
   ></ActionItem>
 </ActionBar>
 <StackLayout class="page">
-  <GridLayout class="m-5" rows="auto">
+  <GridLayout class="m-5" rows="auto, auto">
     <StackLayout row="0" class="p-10 border">
       <Label
         class="h2 p-b-24"
@@ -43,5 +43,27 @@
       <Label class="body p-l-24" text="Fax: +852 8765 4321"></Label>
       <Label class="body p-l-24" text="Email: confusion@food.net"></Label>
     </StackLayout>
+    <GridLayout
+      row="1"
+      orientation="horizontal"
+      rows="*"
+      columns="*, *"
+      class="m-t-20"
+    >
+      <Button
+        row="0"
+        col="0"
+        [text]="('fa-phone' | fonticon) + ' Call'"
+        class="btn btn-rounded-sm btn-outline no-border fa"
+        (tap)="callRestaurant()"
+      ></Button>
+      <Button
+        row="0"
+        col="1"
+        [text]="('fa-envelope-o' | fonticon) + ' Email'"
+        class="btn btn-rounded-sm btn-outline no-border fa"
+        (tap)="sendEmail()"
+      ></Button>
+    </GridLayout>
   </GridLayout>
 </StackLayout>

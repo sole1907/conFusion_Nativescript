@@ -32,6 +32,8 @@ import { ActionDialogService } from "./services/action-dialog.service";
 import { CommentComponent } from "./comment/comment.component";
 import { CouchbaseService } from "./services/couchbase.service";
 import { ReservationService } from "./services/reservation.service";
+import { UserAuthComponent } from "./userauth/userauth.component";
+import { PlatformService } from "./services/platform.service";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -59,6 +61,7 @@ import { ReservationService } from "./services/reservation.service";
         ReservationComponent,
         ReservationModalComponent,
         CommentComponent,
+        UserAuthComponent,
     ],
     entryComponents: [ReservationModalComponent, CommentComponent],
     providers: [
@@ -69,6 +72,7 @@ import { ReservationService } from "./services/reservation.service";
         ActionDialogService,
         CouchbaseService,
         ReservationService,
+        PlatformService,
     ],
     schemas: [NO_ERRORS_SCHEMA],
 })
